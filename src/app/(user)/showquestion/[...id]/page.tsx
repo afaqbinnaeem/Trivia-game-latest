@@ -98,8 +98,8 @@ const QuesWithImage = () => {
       const basePoint = JSON.parse(response?.basePoints);
       setBasePoint(basePoint);
 
-      // setTimer(JSON.parse(response?.timePerQuestion));
-      setTimer(1000000000);
+      setTimer(JSON.parse(response?.timePerQuestion));
+      // setTimer(1000000000);
       const parsedQuestions = JSON.parse(response?.questions).map(
         (question: any) => ({
           ...question,
