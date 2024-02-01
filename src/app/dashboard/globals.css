@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* / CSS for customizing the scrollbar in the specific div / */
+.sidebar-div::-webkit-scrollbar {
+  width: 3px; 
+}
+
+.sidebar-div::-webkit-scrollbar-thumb {
+  background-color: rgb(22 101 52); 
+  border-radius: 6px;
+}
+
+.sidebar-div::-webkit-scrollbar-track {
+  background-color: white; 
+  border-radius: 6px;
+}

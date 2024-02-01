@@ -1,0 +1,40 @@
+{
+  "name": "trivia-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "appwrite": "^13.0.1",
+    "crypto-js": "^4.2.0",
+    "emoji-picker-react": "^4.7.1",
+    "framer-motion": "^11.0.3",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-countdown-circle-timer": "^3.2.1",
+    "react-countup": "^6.5.0",
+    "react-dom": "^18",
+    "react-icons": "^5.0.1",
+    "react-modal": "^3.16.1",
+    "react-toastify": "^10.0.3",
+    "sharp": "^0.33.2",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-modal": "^3.16.3",
+    "autoprefixer": "^10.0.1",
+    "file-loader": "^6.2.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}

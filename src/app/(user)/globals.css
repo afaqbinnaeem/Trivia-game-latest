@@ -1,0 +1,1270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Hind;
+    src: url('../../assets/fonts/Hind/Hind-Regular.ttf');
+}
+
+@font-face {
+    font-family: HindBold;
+    src: url('../../assets/fonts/Hind/Hind-Bold.ttf');
+}
+
+@font-face {
+    font-family: HindMedium;
+    src: url('../../assets/fonts/Hind/Hind-Medium.ttf');
+}
+
+@font-face {
+    font-family: Greycliff CF;
+    src: url('../../assets/fonts/Greycliff-CF/Fontspring-DEMO-greycliffcf-regular.otf');
+}
+
+@font-face {
+    font-family: Greycliff CFBold;
+    src: url('../../assets/fonts/Greycliff-CF/Fontspring-DEMO-greycliffcf-bold.otf');
+}
+
+@font-face {
+    font-family: League Gothic;
+    src: url('../../assets/fonts/League_Gothic/LeagueGothic-Regular.ttf');
+}
+
+@font-face {
+    font-family: League GothicMedium;
+    src: url('../../assets/fonts/League_Gothic/LeagueGothic_SemiCondensed-Regular.ttf');
+}
+
+@font-face {
+    font-family: League GothicBold;
+    src: url('../../assets/fonts/League_Gothic/LeagueGothic_Condensed-Regular.ttf')
+}
+
+@font-face {
+    font-family: PP RightDidone;
+    src: url('../../assets/fonts/PP-Right-Didone/PP-Right-Didone-Tall-Regular.otf');
+}
+
+:root {
+    --Gray-1: #333;
+    --White: #FFF;
+    --Gray-2: #4F4F4F;
+    --Gray-4: #BDBDBD;
+    --Gray-6: #F2F2F2;
+
+    
+}
+
+
+body{
+    height: 100vh;
+}
+@media (max-width:320px) {
+    body{
+        max-width: 320px;
+    }
+}
+@media (min-width:321px) and (max-width:375px) {
+    body{
+        max-width: 375px;
+    }
+}
+@media (min-width:376px) and (max-width:5000px) {
+    body{
+        max-width: 425px;
+        margin: auto;
+    }
+}
+.HindBold {
+    font-family: HindBold;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+.svgDivider svg{
+    width: 100%;
+}
+.loginHeading {
+    color: var(--Gray-1, #333);
+    font-family: Hind;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 88%;
+    /* 44px */
+}
+
+.tabOne {
+    background: none;
+    border: none;
+    width: 50%;
+
+    text-align: center;
+    font-family: Hind;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 99.1%;
+    /* 19.82px */
+    text-transform: uppercase;
+}
+
+.nvHeading {
+    padding: 38px;
+}
+
+.navLabel {
+    color: var(--Gray-1, #333);
+    font-family: Hind;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 114%;
+    /* 18.24px */
+}
+
+.navInput {
+    border-radius: 10px;
+    border: 1px solid #333 !important;
+    background: var(--White, #FFF);
+    height: 55px;
+    flex-shrink: 0;
+
+}
+.error-message {
+    color: #f00;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+.selected-correct {
+    border-radius: 15px !important;
+    border: 4px solid var(--White, #FFF) !important;
+    background: linear-gradient(90deg, #219653 68.23%, rgba(33, 150, 83, 0.15) 100%), #D9D9D9 !important;
+  }
+  
+  .selected-wrong {
+    border-radius: 15px !important;
+    border: 4px solid var(--White, #FFF) !important;
+    background: linear-gradient(90deg, #DC432B 52.6%, rgba(220, 67, 43, 0.15) 100%), #D9D9D9 !important;
+  }
+  .selected-correct-green {
+    border-radius: 15px !important;
+    border: 4px solid var(--White, #FFF) !important;
+    background: linear-gradient(90deg, #219653 68.23%, rgba(33, 150, 83, 0.15) 100%), #D9D9D9 !important;  /* Set the text color to white or any color that ensures readability */
+  }
+  
+
+.loginButton {
+    border-radius: 300px;
+    background: var(--Red-but-grad, linear-gradient(180deg, #DC432B 0%, #B03326 100%));
+    width: 230px;
+    height: 55px;
+    flex-shrink: 0;
+    color: white;
+    border: none;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 143.6%;
+    /* 31.592px */
+}
+
+@keyframes burn {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .starIcon {
+    animation: burn 1s infinite;
+  }
+
+.sbButton {}
+
+.avImage {
+    width: 100px !important;
+}
+
+.br40 {
+    border-radius: 30px !important;
+}
+
+.navScroll {
+    height: 415px;
+    overflow: scroll;
+}
+
+.navInput::placeholder {
+    text-align: center;
+    color: var(--Gray-1, #333);
+    text-align: center;
+    font-family: Hind;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.forthebrain{
+    color: var(--Gray-1, #333);
+font-family: Hind;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 139.1%; /* 27.82px */
+letter-spacing: -0.5px;
+}
+.trophyImage{
+    display: flex;
+width: 24px;
+height: 24px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+}
+.livetext{
+    border-radius: 5px;
+background: var(--SoYummy-Red, #DC432B);
+}
+.bulb{
+    display: flex;
+width: 24px;
+height: 24px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+}
+.livetournment{
+    color: var(--Gray-1, #333);
+font-family: Hind;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 139.1%; /* 27.82px */
+letter-spacing: -0.5px;
+}
+
+.main-bg {
+    background-image: url('../../assets/images/main-bg.png');
+    /* height: 90vh; */
+}
+
+.main-bgTwo {
+    background-image: url('../../assets/images/mainBgTwo.png');
+    background-size: cover;
+    /* Adjust as needed */
+    background-repeat: no-repeat;
+    /* background-position: center center; */
+}
+
+.statusBar {
+    padding: 15px 10px;
+}
+
+.quizBanner {
+    background-image: url('../../assets/images/quizBg.png');
+
+    height: 315px;
+    background-size: cover;
+    /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.selected-correct {
+    background-color: green; /* Add your desired background color */
+    color: white; /* Add your desired text color */
+    /* Add any other styling you want for the correct selected option */
+  }
+
+.quizBannerFinish {
+    background-image: url('../../assets/images/quizFinishBanner.png');
+    border-radius: 0px 0px 25px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 348px;
+    background-size: cover;
+    /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.quizBannerLeaderBoard {
+    /* background-image: url('../../assets/images/quizFinishBanner.png'); */
+    /* border-radius: 0px 0px 25px 25px;  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background-size: cover;
+    /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.quizBannerTwo {
+    background-image: url('../../assets/images/quizComp.png');
+
+    height: 315px;
+    background-size: cover;
+    /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
+
+
+}
+.opennow{
+    color: var(--White, #FFF);
+font-family: "Greycliff CF";
+font-size: 19px;
+font-style: normal;
+font-weight: 700;
+line-height: 90.1%; /* 17.119px */
+letter-spacing: -0.475px;
+text-transform: uppercase;
+}
+.openNowDiv{
+    padding-top: 25px;
+    /* padding-left: 35px; */
+}
+
+.quizBannerPink {
+    background-image: url('../../assets/images/signInLogo.png');
+
+    height: 315px;
+    /* background-size: cover; */
+    /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.players{
+    color: var(--White, #FFF);
+text-align: right;
+font-family: "Greycliff CF";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 87.6%; /* 17.52px */
+
+}
+
+.stPlays {
+    color: var(--White, #FFF);
+font-family: "Greycliff CF";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 87.6%; /* 17.52px */
+}
+
+.stPlaysEnds {
+    color: var(--White, #FFF);
+    text-align: right;
+    font-family: "Greycliff CF";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90.1%; /* 18.02px */
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+.quizBannerNickname {
+    background-image: url('../../assets/images/bgPink.png');
+
+    height: 315px;
+    background-size: cover;
+    /* Adjust as needed */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.gameHeading {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "League Gothic";
+    font-size: 73.685px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90.1%; /* 66.39px */
+    letter-spacing: -1.842px;
+    text-transform: uppercase;
+}
+
+.mainGameHeading {
+    margin-top: 65px;
+}
+
+.gameHeadingTwo {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "Greycliff CF";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140.1%; /* 30.822px */
+    letter-spacing: -0.55px;
+    text-transform: uppercase;
+}
+
+.quizCenter {
+    padding: 40px 40px;
+}
+
+.qStart {
+    color: var(--Gray-1, #333);
+    /* font-family: HindBold; */
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 114%;
+    /* 28.5px */
+}
+
+.quizInput {
+    border-radius: 15px !important;
+    border: 1px solid var(--Gray-4, #BDBDBD) !important;
+    background: var(--White, #FFF) !important;
+    height: 55px;
+    padding: 0px 20px;
+}
+
+.px37 {
+    padding: 0px 37px;
+}
+
+.quizInput::placeholder {
+    color: var(--Gray-4, #BDBDBD);
+    text-align: center;
+    font-family: Hind;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    opacity: 0.7;
+}
+
+.quizAgreeCheckBox {
+    padding-top: 14px;
+}
+
+.agreePolicy {}
+
+.signInLink {
+    color: #c53b29;
+    font-family: HindBold;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+
+}
+
+.welcomeHeading {
+    color: var(--Gray-1, #333);
+    font-family: HindBold;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    /* 44px */
+}
+
+.w265 {
+    width: 265px;
+}
+
+.ss-heading {
+    color: var(--Gray-1, #333);
+    font-family: Hind;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 114%;
+    /* 28.5px */
+}
+
+.welPadding {
+    padding: 200px 50px;
+}
+
+.homeWelcome {
+    padding: 40px 23px;
+}
+
+.welHeading {
+    color: var(--Gray-1, #333);
+    font-family: League Gothic;
+    font-size: 60.79px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90.1%;
+    /* 54.772px */
+    letter-spacing: -1.52px;
+    text-transform: uppercase;
+}
+
+.bgPink {
+    background: #FFF3E6;
+    /* height: 90vh; */
+}
+
+.hhQuizOne {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/QuizBgOne.png');
+    background-size: cover;
+
+    height: 315px;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.loginButton{
+    width: 100%;
+}
+.hhQuizTwo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/quizBgTwo.png');
+    background-size: cover;
+
+    height: 315px;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.hhQuizThree {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/quizBgThree.png');
+    background-size: cover;
+
+    height: 315px;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.quizList {}
+
+.startDate {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90.1%;
+    /* 18.02px */
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.hhquizHeading {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: League Gothic;
+    font-size: 60.79px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90.1%;
+    /* 54.772px */
+    letter-spacing: -1.52px;
+    text-transform: uppercase;
+}
+.quesimage{
+    width: 443px;
+height: 150px;
+flex-shrink: 0;
+}
+
+.hQuizHeadingTwo {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90.1%;
+    /* 22.525px */
+    letter-spacing: -0.625px;
+}
+
+.joinGamebtn {
+    border-radius: 165px;
+    background: linear-gradient(91deg, #ECB31F 23.13%, #FFF 45.79%, #FCC025 61.19%);
+    color: #7B5A07;
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 16.5px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 90.1%;
+    /* 14.867px */
+    letter-spacing: -0.412px;
+    text-transform: uppercase;
+    padding: 13px 32px;
+    border: none !important;
+}
+.startplaying{
+    color: #7B5A07;
+text-align: center;
+font-family: "Greycliff CF";
+font-size: 24.962px;
+font-style: normal;
+font-weight: 900;
+line-height: 90.1%; /* 22.49px */
+letter-spacing: -0.624px;
+text-transform: uppercase;
+width: 335.333px;
+height: 59px;
+flex-shrink: 0;
+border-radius: 249.615px;
+background: linear-gradient(91deg, #ECB31F 23.13%, #FFF 45.79%, #FCC025 61.19%);
+}
+
+.welcomePiza {
+    color: #FCC025;
+    text-align: center;
+    font-family: "Greycliff CF";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90.1%; /* 22.525px */
+    letter-spacing: -0.625px;
+}
+
+.mainGameHeadingQuiz {
+    margin-top: 45px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.slider {
+    background: white;
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125); */
+    /* height: 100px; */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 97%;
+    transform: rotate(-3.5deg);
+    background-color: #6D10CA;
+    /* background-image: url('./assets/images/crosBg.png'); */
+}
+.pointdiv span{
+    color: var(--White, #FFF);
+    font-family: Hind;
+    font-size: 21.724px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 139.1%;
+    letter-spacing: -0.543px;
+    text-transform: uppercase;
+}
+.pointdiv{
+    text-align: center;
+}
+@keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fadeInRight {
+    animation: fadeInRight 3s ease-out;
+  }
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fadeInLeft {
+    animation: fadeInLeft 3s ease-out;
+  }
+  
+.slider::before,
+.slider::after {
+    /* background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); */
+    content: "";
+    height: 100px;
+    position: absolute;
+    /* width: 200px; */
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    /* width: calc(250px * 14); */
+}
+
+.slider .slide {
+    /* height: 100px;
+    width: 250px; */
+}
+
+.bgPurple {
+    background-color: #6D10CA;
+}
+.questionStatusbar {
+    padding: 10px;
+}
+.quesPadding{
+    margin-top: 145px;
+}
+.qmPrize {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140.1%;
+    white-space: nowrap;
+    /* 30.822px */
+    letter-spacing: -0.55px;
+}
+
+.crContent{
+    z-index: +9999;
+    top: 32px;
+    left: 40px;
+}
+.singlebadge{
+    z-index: +9999;
+    top: 32px;
+    left: 187px;
+
+}
+
+.crHeading {
+    color: #FCC025;
+    text-align: center;
+    font-family: PP RightDidoneBold;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+
+    letter-spacing: -1.375px;
+    text-transform: uppercase;
+}
+
+.crPlaces {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90.1%;
+    /* 14.416px */
+    letter-spacing: -0.4px;
+}
+
+.crfryer {
+    color: var(--White, #FFF);
+    font-family: Greycliff CF;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90.1%;
+    /* 22.525px */
+    letter-spacing: -0.625px;
+}
+
+.crThankyou {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140.1%;
+    /* 30.822px */
+    letter-spacing: -0.55px;
+}
+
+.qzleaderBtn {
+    border-radius: 40px;
+    background: linear-gradient(180deg, #7712DB 0%, #52099B 100%);
+    padding: 14px 11px;
+    /* border: none; */
+    border-radius: 165px;
+    border: 1.1px solid var(--White, #FFF);
+    color: var(--White, #FFF);
+    font-family: Greycliff CF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90.1%;
+    /* 14.416px */
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+    width: 231px;
+}
+
+.eyeContent {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 97.1%;
+    /* 19.42px */
+    letter-spacing: -0.5px;
+}
+
+.qqPrizeContent {
+    color: var(--White, #FFF);
+text-align: center;
+font-family: "Greycliff CF";
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 140.1%; /* 30.822px */
+letter-spacing: -0.55px;
+}
+
+.rotat3 {
+    transform: rotate(-3.5deg);
+
+}
+
+.quesExit {
+    color: var(--White, #FFF);
+    font-family: Hind;
+    font-size: 21.724px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 139.1%;
+    /* 30.218px */
+    letter-spacing: -0.543px;
+    text-transform: uppercase;
+}
+
+.quesBg {
+    background-image: url('../../assets//images/questionBg.png');
+    background-size: cover;
+}
+
+.quesBgTwo {
+    background-image: url('../../assets//images/QuestionWithBg.png');
+    background-size: cover;
+}
+
+.quesTotalStars {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 99.1%;
+    /* 29.73px */
+    letter-spacing: -0.75px;
+}
+
+/* .mainPadding{
+    padding: 30px 10px;
+} */
+.quesPoints {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90.1%;
+    /* 12.614px */
+    letter-spacing: -0.35px;
+}
+
+.quesStars {
+    align-items: baseline;
+}
+
+.queNumber {
+    color: var(--White, #FFF);
+    font-family: "Greycliff CF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 99.1%; /* 14.865px */
+    letter-spacing: -0.375px;
+    text-transform: uppercase;
+}
+
+.quesPadding {
+    padding: 30px 25px;
+}
+
+.quesHeading {
+    color: var(--White, #FFF);
+    font-family: Greycliff CF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 99.1%;
+    /* 39.64px */
+    letter-spacing: -1.6px;
+}
+
+.quesP {
+    color: #6F10CD;
+    text-align: center;
+    font-family: Greycliff CFBold;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 99.1%;
+    /* 21.802px */
+    letter-spacing: -0.55px;
+}
+
+.quesOptions {
+    border-radius: 15px;
+    background: var(--White, #FFF);
+    padding: 15px 0px;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.pt100 {
+    padding-top: 100px;
+
+}
+
+.pb50 {
+    padding-bottom: 50px;
+}
+
+.QuesYN {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 99.1%;
+    /* 34.685px */
+    letter-spacing: -0.875px;
+}
+
+.quesOptionsYes {
+    padding: 60px 50px;
+    background: linear-gradient(180deg, #219653 0%, rgba(33, 150, 83, 0.15) 100%);
+    border: 3px solid white;
+    border-radius: 30px;
+}
+
+.quesOptionsNo {
+    padding: 60px 50px;
+    border-radius: 30px;
+    border: 3px solid var(--White, #FFF);
+    background: linear-gradient(180deg, #DC432B 0%, rgba(220, 67, 43, 0.15) 100%);
+}
+
+.p50 {
+    padding-top: 50px;
+}
+
+.mb-40 {
+    margin-top: -40px;
+}
+
+.quizComHeading {
+    color: #FCC025;
+    text-align: center;
+    font-family: Greycliff CFBold;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 99.1%;
+    /* 29.73px */
+    letter-spacing: -1.2px;
+}
+.quizCompletedDiv img{
+    margin: auto;
+}
+.quizCompletedDiv {
+    /* margin: -10px; */
+}
+
+  
+.quesTime{
+    color: var(--White, #FFF);
+    font-family: Hind;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 139.1%;
+    letter-spacing: -0.543px;
+    text-transform: uppercase;
+}
+.prizeName{
+    color: var(--White, #FFF);
+font-family: "Greycliff CF";
+font-size: 23px;
+font-style: normal;
+font-weight: 700;
+
+}
+.swiper {
+    transform: rotate(-3.5deg);
+}
+.swiper-slide {
+    width: 60% !important;
+  }
+  
+  .swiper-slide:nth-child(2n) {
+    width: 60%;
+  }
+  .swiper-slide{
+    margin-right: 0px !important;
+  }
+  .swiper-slide:nth-child(3n) {
+    width: 40%;
+  }
+  
+.cr-number{
+    color: #FCC025;
+text-align: center;
+font-family: "PP Right Didone";
+font-size: 55px;
+font-style: normal;
+font-weight: 500;
+line-height: 140.1%; /* 77.055px */
+letter-spacing: -1.375px;
+text-transform: uppercase;
+}
+.quizComPosition {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 99.1%;
+    /* 29.73px */
+    letter-spacing: -1.2px;
+}
+
+.quizTotalPoints {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 99.1%;
+    /* 79.28px */
+    letter-spacing: -2px;
+    /* position: absolute;
+    right: 84px;
+    bottom: -4px; */
+}
+
+.baseline {
+    align-items: baseline;
+}
+
+.mt150 {
+    margin-top: -150px;
+}
+.pointsShareBtn{
+    border-radius: 300px;
+background: linear-gradient(93deg, #FFF 28.6%, #FFEBB8 43.24%, #FFF 49.7%);
+color: #5F0CB1;
+font-family: Greycliff CF;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 21.802px */
+letter-spacing: -0.55px;
+border: none;
+padding: 15px 20px;
+}
+.nextQuiz{
+    color: var(--White, #FFF);
+text-align: center;
+font-family: Hind;
+font-size: 13.957px;
+font-style: normal;
+font-weight: 700;
+line-height: 139.1%; /* 19.415px */
+letter-spacing: -0.349px;
+text-transform: uppercase;
+}
+.relatedQuiz{
+    padding: 96px 10px;
+    
+ 
+    background-image: url('../../assets//images//relatedGamebg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*   
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #54099E;
+    opacity: 0.65;
+  } */
+  
+.quesAllGame{
+    color: #FFF3E6;
+font-family: Hind;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 139.1%; /* 22.256px */
+letter-spacing: -0.4px;
+text-transform: uppercase;
+}
+.leaderBoardHeading{
+    color: #5C0BAC;
+text-align: center;
+font-family: Greycliff CF;
+font-size: 22.667px;
+font-style: normal;
+font-weight: 900;
+line-height: 90.1%; /* 20.423px */
+letter-spacing: -0.567px;
+}
+.leaderHeadingdiv{
+    border-radius: 20px 20px 0px 0px;
+background: #FCC025;
+padding: 12px 10px;
+margin-top: 58px;
+    margin-bottom: -41px;
+
+}
+.leaderPlace{
+    color: var(--White, #FFF);
+font-family: Greycliff CF;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 90.1%;
+letter-spacing: -0.55px;
+}
+.positionName{
+    color: #550AA0;
+font-family: Greycliff CF;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 19.82px */
+letter-spacing: -0.5px;
+}
+.pnNumber{
+    color: #550AA0;
+font-family: Greycliff CF;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 24.775px */
+letter-spacing: -0.625px;
+}
+.quizimagehight{
+    height: 112px;
+}
+.pttNumber{
+    color: #550AA0;
+text-align: right;
+font-family: Greycliff CF;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 19.82px */
+letter-spacing: -0.5px;
+}
+.ppBorder{
+    border-radius: 20px;
+border: 5px solid #FCC025;
+}
+.borderDashed{
+    border-right: 1px dashed white;
+}
+.lineHight49{
+    line-height: 49px;
+}
+.hh-td{
+    color: var(--Gray-1, #333);
+font-family: Hind;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 88%; /* 21.12px */
+}
+@media (min-width:340px) and (max-width: 390px){
+    .media {
+        z-index: +9999;
+        top: 32px;
+        left: 60px;
+    }
+}
+@media (min-width:391px) and (max-width: 430px){
+    .media {
+        z-index: +9999;
+        top: 32px;
+        left: 80px;
+    }
+}
