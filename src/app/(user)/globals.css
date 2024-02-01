@@ -759,7 +759,7 @@ background: linear-gradient(91deg, #ECB31F 23.13%, #FFF 45.79%, #FCC025 61.19%);
     padding: 10px;
 }
 .quesPadding{
-    margin-top: 145px;
+    margin-top: 20px;
 }
 .qmPrize {
     color: var(--White, #FFF);
@@ -931,6 +931,8 @@ letter-spacing: -0.55px;
 
 .quesStars {
     align-items: baseline;
+    width: 65px;
+
 }
 
 .queNumber {
@@ -975,17 +977,25 @@ letter-spacing: -0.55px;
     border-radius: 15px;
     background: var(--White, #FFF);
     padding: 15px 0px;
+    border-radius: 15px !important;
+    border: 4px solid var(--White, #FFF) !important;
 }
+
 
 .cp {
     cursor: pointer;
 }
-
+.h92{
+    height: 92vh;
+}
 .pt100 {
     padding-top: 100px;
 
 }
-
+/* .imgYelow{
+    background-image: url('../../assets/images/yellowBorder.jpeg');
+    height: 30px;
+} */
 .pb50 {
     padding-bottom: 50px;
 }

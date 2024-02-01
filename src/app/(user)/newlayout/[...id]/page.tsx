@@ -404,7 +404,7 @@ const QuesWithImage = () => {
                 </div>
               </div>
 
-              <div className="quesHeadingDiv pt-6">
+              <div className="quesHeadingDiv pt-2">
                 {currentQuestionIndex < questions.length && (
                   <motion.h1
                     key={currentQuestionIndex}
@@ -445,7 +445,7 @@ const QuesWithImage = () => {
                 )}
               </div>
 
-              <div className="flex justify-center items-center mt-10">
+              <div className="flex justify-center items-center mt-5">
                 <div className="exit cursor-pointer">
                   <div className="flex justify-center items-center">
                     <p

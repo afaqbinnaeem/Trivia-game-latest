@@ -41,7 +41,7 @@ useEffect(()=>{
     <html lang="en">
       <body className={inter.className}>
         <>
-          <nav className="bg-white p-4">
+          <nav className="bg-white p-4 sticky top-0 z-10">
             <div className="container mx-auto flex items-center justify-between">
               <a className="navbar-brand " href="#">
                 <Image src={logo} alt="" className="w-16 h-9" />
