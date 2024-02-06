@@ -101,7 +101,7 @@ const SignUpOne = () => {
               </svg>
             </button>
           </div>
-          <div className="quizAgreeCheckBox flex items-center justify-center pb-3">
+          <div className="quizAgreeCheckBox flex items-center justify-center pb-14">
             <p className="agreePolicy ps-2 mb40">
               You already have an account?{" "}
               <span
