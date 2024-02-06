@@ -28,8 +28,8 @@ const Login = () => {
     return (
         <div>
 
-            <div className="main-bg h-screen">
-                <div className="quizBannerPink">
+            <div className="main-bg h95 flex items-center justify-between flex-col">
+                <div className="quizBannerPink w-full">
                     
 
                 </div>
@@ -59,8 +59,8 @@ const Login = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="quizAgreeCheckBox flex items-center justify-center">
-                        <p className='agreePolicy ps-2 mb40'>You already have an account? <span className='signInLink HindiBold'>Sign in  </span> </p>
+                    <div className="quizAgreeCheckBox flex items-center justify-center pb-3">
+                        <p className='agreePolicy ps-2 mb40 mb-5'>You already have an account? <span className='signInLink HindiBold'>Sign in  </span> </p>
                     </div>
                 </div>
 

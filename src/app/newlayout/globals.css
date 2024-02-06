@@ -362,7 +362,7 @@ text-transform: uppercase;
 .quizBannerPink {
     background-image: url('../../assets/images/signInLogo.png');
 
-    height: 315px;
+    height: 200px;
     /* background-size: cover; */
     /* Adjust as needed */
     background-repeat: no-repeat;

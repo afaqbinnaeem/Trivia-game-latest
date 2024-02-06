@@ -358,11 +358,13 @@ text-transform: uppercase;
     padding-top: 25px;
     /* padding-left: 35px; */
 }
-
+.h95{
+    height: 95vh !important;
+}
 .quizBannerPink {
     background-image: url('../../assets/images/signInLogo.png');
 
-    height: 315px;
+    height: 210px;
     /* background-size: cover; */
     /* Adjust as needed */
     background-repeat: no-repeat;
