@@ -363,6 +363,11 @@ text-transform: uppercase;
     /* height: calc(100vh - 68px) !important; */
 
 }
+.h95C{
+    /* height: 95vh !important; */
+    height: calc(100vh - 68px) !important;
+
+}
 .quizBannerPink {
     background-image: url('../../assets/images/signInLogo.png');
 

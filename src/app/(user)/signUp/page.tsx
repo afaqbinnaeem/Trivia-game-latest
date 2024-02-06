@@ -33,7 +33,7 @@ const SignUpOne = () => {
   };
   return (
     <div>
-      <div className="main-bg h95 overflow-hidden flex items-center justify-between flex-col">
+      <div className="main-bg h95C overflow-hidden flex items-center justify-between flex-col">
         <div className="quizBandner">
           {/* <div className="mainGameHeading">
           <h1 className='gameHeading'>The Pizza King</h1>
