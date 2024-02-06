@@ -81,7 +81,7 @@ const page: React.FC = () => {
 
   return (
     <div>
-      <div className="main-bg overflow-hidden">
+      <div className="main-bg overflow-scroll h-screen">
         <div
           className="quizBannerTwo relative"
           style={{ backgroundImage: `url('${quiz?.quizImageURL}')` }}

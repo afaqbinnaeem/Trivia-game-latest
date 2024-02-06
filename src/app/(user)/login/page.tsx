@@ -28,7 +28,7 @@ const Login = () => {
     return (
         <div>
 
-            <div className="main-bg h95 flex items-center justify-between flex-col">
+            <div className="main-bg h-screen flex items-center justify-between flex-col">
                 <div className="quizBannerPink w-full">
                     
 

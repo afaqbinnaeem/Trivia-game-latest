@@ -771,7 +771,18 @@ background: linear-gradient(91deg, #ECB31F 23.13%, #FFF 45.79%, #FCC025 61.19%);
     display: flex;
     /* width: calc(250px * 14); */
 }
-
+.nav-links {
+    transition: transform 0.3s ease-in-out; /* Add a transition effect for the transform property */
+  }
+  
+  .nav-links.open {
+    transform: translateY(0); /* Apply a transform to move the navigation links into view */
+  }
+  
+  .nav-links.closed {
+    transform: translateY(-100%); /* Move the navigation links out of view */
+  }
+  
 .slider .slide {
     /* height: 100px;
     width: 250px; */
