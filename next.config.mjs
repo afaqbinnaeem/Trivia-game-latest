@@ -3,6 +3,9 @@ const nextConfig = {
   images: {
     domains: ['cloud.appwrite.io'],
   },
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
   webpack: (config, { isServer }) => {
     // Add support for loading MP3 files
     config.module.rules.push({
