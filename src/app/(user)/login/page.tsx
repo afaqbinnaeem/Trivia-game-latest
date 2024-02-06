@@ -59,7 +59,7 @@ const Login = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="quizAgreeCheckBox flex items-center justify-center pb-3">
+                    <div className="quizAgreeCheckBox flex items-center justify-center  pb-14">
                         <p className='agreePolicy ps-2 mb40 mb-5'>You already have an account? <span className='signInLink HindiBold'>Sign in  </span> </p>
                     </div>
                 </div>

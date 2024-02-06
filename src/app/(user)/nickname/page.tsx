@@ -43,7 +43,9 @@ const Nickname = () => {
 
   return (
     <div>
-      <div className="main-bg h-screen overflow-scroll">
+      <div className="main-bg h-screen">
+      <div className=" 95c overflow-scroll flex items-center justify-between flex-col">
+
         {/* <div className="quizBannerNickname"></div> */}
         <div className="quizCenter welPadding">
           <h1 className="welcomeHeading mb-0 HindBold w265">
@@ -66,7 +68,7 @@ const Nickname = () => {
           />
           {error && <p className="text-red-700 font-semibold text-center">{error}</p>}
 
-          <div className="sbButton d-flex justify-content-center mt-5">
+          <div className="sbButton d-flex justify-content-center mt-5  pb-14">
             <button
               onClick={(e) => handleNickName(e)}
               className="loginButton flex items-center justify-center"
@@ -107,6 +109,8 @@ const Nickname = () => {
           </div>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };
