@@ -249,7 +249,7 @@ const Home: React.FC = () => {
   return (
     <>
       <div className="bgPink">
-        <div className="homeWelcome h-screen">
+        <div className="homeWelcome h-screen overflow-scroll">
           <h1 className="welHeading">welcome to trivialand</h1>
           <div className="trphy flex items-center justify-between mt-4">
             <div className="flex">
@@ -562,7 +562,7 @@ const Home: React.FC = () => {
             })}
           </div>
 
-          <div className="flex items-center my-4">
+          <div className="flex items-center my-4 pb-7">
             <Image src={bulb} className="bulb" alt="" />
             <p className="forthebrain mb-0 ps-2">For the brain</p>
           </div>
