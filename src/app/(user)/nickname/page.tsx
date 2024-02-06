@@ -43,9 +43,9 @@ const Nickname = () => {
 
   return (
     <div>
-      <div className="main-bg h-screen">
-        <div className="quizBannerNickname"></div>
-        <div className="quizCenter">
+      <div className="main-bg h-screen overflow-scroll">
+        {/* <div className="quizBannerNickname"></div> */}
+        <div className="quizCenter welPadding">
           <h1 className="welcomeHeading mb-0 HindBold w265">
             Choose your player nickname
           </h1>

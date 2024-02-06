@@ -60,6 +60,7 @@
 
 body{
     height: 100vh;
+    overflow: hidden;
 }
 @media (max-width:320px) {
     body{
@@ -513,7 +514,7 @@ line-height: 87.6%; /* 17.52px */
 }
 
 .welPadding {
-    padding: 200px 50px;
+    padding: 112px 50px !important;
 }
 
 .homeWelcome {
