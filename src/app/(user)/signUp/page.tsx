@@ -33,7 +33,7 @@ const SignUpOne = () => {
   };
   return (
     <div>
-      <div className="main-bg h-screen overflow-hidden flex items-center justify-between flex-col">
+      <div className="main-bg h95 overflow-hidden flex items-center justify-between flex-col">
         <div className="quizBandner">
           {/* <div className="mainGameHeading">
           <h1 className='gameHeading'>The Pizza King</h1>
@@ -101,7 +101,7 @@ const SignUpOne = () => {
               </svg>
             </button>
           </div>
-          <div className="quizAgreeCheckBox flex items-center justify-center">
+          <div className="quizAgreeCheckBox flex items-center justify-center pb-3">
             <p className="agreePolicy ps-2 mb40">
               You already have an account?{" "}
               <span
