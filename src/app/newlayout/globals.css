@@ -321,13 +321,14 @@ letter-spacing: -0.5px;
     background-position: center center;
 }
 .quizBannerLeaderBoard {
-    background-image: url('../../assets/images/quizFinishBanner.png') !important;
-    border-radius: 0px 0px 25px 25px !important; 
+    background-image: url('../../assets/images/quizFinishBanner.png');
+    border-radius: 0px 0px 25px 25px; 
     display: flex;
     align-items: center;
     justify-content: center;
     height: 300px;
     background-size: cover;
+    /* Adjust as needed */
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -609,7 +610,6 @@ line-height: 87.6%; /* 17.52px */
 height: 150px;
 flex-shrink: 0;
 }
-
 
 .hQuizHeadingTwo {
     color: var(--White, #FFF);
@@ -1045,9 +1045,9 @@ letter-spacing: -0.55px;
     background: linear-gradient(180deg, #DC432B 0%, rgba(220, 67, 43, 0.15) 100%);
 }
 
-/* .p50 {
+.p50 {
     padding-top: 50px;
-} */
+}
 
 .mb-40 {
     margin-top: -40px;
@@ -1132,13 +1132,17 @@ text-transform: uppercase;
 
 .quizTotalPoints {
     color: var(--White, #FFF);
-text-align: center;
-font-family: "Greycliff CF";
-font-size: 80px;
-font-style: normal;
-font-weight: 600;
-line-height: 99.1%; /* 79.28px */
-letter-spacing: -2px;
+    text-align: center;
+    font-family: Greycliff CF;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 99.1%;
+    /* 79.28px */
+    letter-spacing: -2px;
+    /* position: absolute;
+    right: 84px;
+    bottom: -4px; */
 }
 
 .baseline {
@@ -1203,27 +1207,21 @@ line-height: 139.1%; /* 22.256px */
 letter-spacing: -0.4px;
 text-transform: uppercase;
 }
-.tournamentPoisitiondiv{
-    border-radius: 20px;
-background: var(--offwhite---bg, #FFF8F0);
-height: 69px;
-    width: 94%;
-}
 .leaderBoardHeading{
     color: #5C0BAC;
-    text-align: center;
-    font-family: "Greycliff CF";
-    font-size: 22.667px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 90.1%; /* 20.423px */
-    letter-spacing: -0.567px;
+text-align: center;
+font-family: Greycliff CF;
+font-size: 22.667px;
+font-style: normal;
+font-weight: 900;
+line-height: 90.1%; /* 20.423px */
+letter-spacing: -0.567px;
 }
 .leaderHeadingdiv{
     border-radius: 20px 20px 0px 0px;
 background: #FCC025;
 padding: 12px 10px;
-margin-top: 58px;
+margin-top: 66px;
     margin-bottom: -41px;
 
 }
@@ -1245,19 +1243,44 @@ font-weight: 700;
 line-height: 99.1%; /* 19.82px */
 letter-spacing: -0.5px;
 }
-.pnNumber{
-    color: var(--offwhite---bg, #FFF8F0) !important;
-
-    font-family: "Greycliff CF";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 99.1%; /* 17.838px */
-    letter-spacing: -0.45px;
+.positionNameFinal{
+    color: #ffffff;
+font-family: Greycliff CF;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 19.82px */
+letter-spacing: -0.5px;
 }
-.pttNumber {
-    margin-right: 15px;
-    margin-top: 20px;
+.finalNext svg{
+margin: auto;
+}
+.pnNumber{
+    color: #550AA0;
+font-family: Greycliff CF;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 24.775px */
+letter-spacing: -0.625px;
+}
+.pnNumberFinal{
+    color: #550AA0;
+font-family: Greycliff CF;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 24.775px */
+letter-spacing: -0.625px;
+}
+.pnNumberFinal{
+    color: #ffffff;
+font-family: Greycliff CF;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: 99.1%; /* 24.775px */
+letter-spacing: -0.625px;
 }
 .quizimagehight{
     height: 112px;
@@ -1290,30 +1313,6 @@ font-style: normal;
 font-weight: 600;
 line-height: 88%; /* 21.12px */
 }
-.loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #FFF;
-    border-bottom-color: #FF3D00;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-  }
-  .loader-div{
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 @media (min-width:340px) and (max-width: 390px){
     .media {
         z-index: +9999;

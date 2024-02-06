@@ -5,10 +5,13 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { IoHome } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
+import { MdOutlineQuiz } from "react-icons/md";
+import { FaUsers } from "react-icons/fa";
 import "./globals.css";
 import Drawrer from "@/components/Drawrer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { TbTournament } from "react-icons/tb";
 
 // export const companyMenus = [
 //   {
@@ -57,23 +60,43 @@ export default function RootLayout({
                 Trivia Dashboard
               </div>
               <div className="sidebar-div relative mt-8 flex max-h-[calc(100%-150px)] flex-col overflow-y-auto pr-8">
-                <a href="/dashboard/tournments" className="my-1 flex text-2xl items-center gap-3.5  rounded-r-[50px] py-3 pl-6 font-inter font-normal leading-normal text-opacity-90 no-underline hover:bg-green-800 hover:text-white text-slate-700">
+                <a
+                  href="/dashboard/tournments"
+                  className="my-1 flex text-2xl items-center gap-3.5  rounded-r-[50px] py-3 pl-6 font-inter font-normal leading-normal text-opacity-90 no-underline hover:bg-green-800 hover:text-white text-slate-700"
+                >
                   <div className="flex items-center w-5 h-5">
-                    <IoHome />
+                    <TbTournament />
                   </div>
-                  <p className="my-0 whitespace-pre duration-200">Tournaments</p>
+                  <p className="my-0 whitespace-pre duration-200">
+                    Tournaments
+                  </p>
                 </a>
-                <a href="/dashboard/quiz" className="my-1 flex text-2xl items-center gap-3.5  rounded-r-[50px] py-3 pl-6 font-inter font-normal leading-normal text-opacity-90 no-underline hover:bg-green-800 hover:text-white text-slate-700">
+                <a
+                  href="/dashboard/quiz"
+                  className="my-1 flex text-2xl items-center gap-3.5  rounded-r-[50px] py-3 pl-6 font-inter font-normal leading-normal text-opacity-90 no-underline hover:bg-green-800 hover:text-white text-slate-700"
+                >
                   <div className="flex items-center w-5 h-5">
                     <IoHome />
                   </div>
                   <p className="my-0 whitespace-pre duration-200">Quiz</p>
                 </a>
-                <a href="/dashboard/allquiz" className="my-1 flex text-2xl items-center gap-3.5  rounded-r-[50px] py-3 pl-6 font-inter font-normal leading-normal text-opacity-90 no-underline hover:bg-green-800 hover:text-white text-slate-700">
+                <a
+                  href="/dashboard/allquiz"
+                  className="my-1 flex text-2xl items-center gap-3.5  rounded-r-[50px] py-3 pl-6 font-inter font-normal leading-normal text-opacity-90 no-underline hover:bg-green-800 hover:text-white text-slate-700"
+                >
                   <div className="flex items-center w-5 h-5">
-                    <IoHome />
+                    <MdOutlineQuiz />
                   </div>
                   <p className="my-0 whitespace-pre duration-200">All Quiz</p>
+                </a>
+                <a
+                  href="/dashboard/users"
+                  className="my-1 flex text-2xl items-center gap-3.5  rounded-r-[50px] py-3 pl-6 font-inter font-normal leading-normal text-opacity-90 no-underline hover:bg-green-800 hover:text-white text-slate-700"
+                >
+                  <div className="flex items-center w-5 h-5">
+                    <FaUsers />
+                  </div>
+                  <p className="my-0 whitespace-pre duration-200">Users</p>
                 </a>
               </div>
             </div>

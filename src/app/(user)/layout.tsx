@@ -1,5 +1,4 @@
-// Import the correct Router from Next.js
-'use client'
+"use client";
 // import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -8,11 +7,11 @@ import "react-toastify/dist/ReactToastify.css";
 import logo from "@/assets/images/Logo.png";
 import Image from "next/image";
 import SearchComponent from "@/components/Search";
-import { useEffect } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
-
+import { LogInToken } from "@/context/usercontext";
+import Loader from "@/Loader/Loader";
 const inter = Inter({ subsets: ["latin"] });
-
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -20,59 +19,81 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const router = useRouter()
+  const router = useRouter();
+  const { token, setToken } = useContext(LogInToken) || {
+    token: undefined,
+    setToken: () => {},
+  };
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchToken = async () => {
+      try {
+        const storedToken = localStorage.getItem("cookieFallback");
+        // @ts-ignore
+        if (!storedToken) {
+          router.push("/signUp");
+        }
+      } catch (error) {
+        console.error("Error fetching token:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-useEffect(()=>{
-  const token = localStorage.getItem('cookieFallback')
-  console.log(token)
-  if(!token){
-    router.push('/login')
-    return
-  }else{
-    router.push('/home')
-  }
-  
-},[])
+    fetchToken();
+    // @ts-ignore // Call the fetchToken function
+  }, [router.pathname]); // Add router.pathname to the dependency array
 
+  // useEffect(()=>{
+  //   const token = localStorage.getItem('cookieFallback')
+  //   console.log(token)
+  //   if(!token){
+  //     router.push('/signUp')
+  //     return
+  //   }else{
+  //     router.push('/home')
+  //   }
 
-
+  // },[])
 
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <>
-          <nav className="bg-white p-4 sticky top-0 z-10">
-            <div className="container mx-auto flex items-center justify-between">
-              <a className="navbar-brand " href="#">
-                <Image src={logo} alt="" className="w-16 h-9" />
-              </a>
-              <div className="flex items-center relative">
-                {/* <SearchComponent /> */}
-                <button
-                  className=" focus:outline-none ml-8"
-                  type="button"
-                  aria-label="Toggle navigation"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="27"
-                    height="25"
-                    viewBox="0 0 27 25"
-                    fill="black"
+    <LogInToken.Provider value={{ token, setToken }}>
+      <html lang="en">
+        <body className={inter.className}>
+          <>
+            <nav className="bg-white p-4 sticky top-0 z-10">
+              <div className="container mx-auto flex items-center justify-between">
+                <a className="navbar-brand " href="#">
+                  <Image src={logo} alt="" className="w-16 h-9" />
+                </a>
+                <div className="flex items-center relative">
+                  {/* <SearchComponent /> */}
+                  <button
+                    className=" focus:outline-none ml-8"
+                    type="button"
+                    aria-label="Toggle navigation"
                   >
-                    <path d="M0 2H27" stroke="black" strokeWidth="4" />
-                    <path d="M0 12.0166H27" stroke="black" strokeWidth="4" />
-                    <path d="M0 22.0322H27" stroke="black" strokeWidth="4" />
-                  </svg>
-                </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="27"
+                      height="25"
+                      viewBox="0 0 27 25"
+                      fill="black"
+                    >
+                      <path d="M0 2H27" stroke="black" strokeWidth="4" />
+                      <path d="M0 12.0166H27" stroke="black" strokeWidth="4" />
+                      <path d="M0 22.0322H27" stroke="black" strokeWidth="4" />
+                    </svg>
+                  </button>
+                </div>
               </div>
-            </div>
-          </nav>
-        </>
-        {children}
-        <ToastContainer />
-      </body>
-    </html>
+            </nav>
+          </>
+          {loading ? <Loader /> : children}
+          <ToastContainer />
+        </body>
+      </html>
+    </LogInToken.Provider>
   );
 };
 

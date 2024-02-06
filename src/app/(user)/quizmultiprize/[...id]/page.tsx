@@ -14,6 +14,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import YellowBorder from "@/assets/images/yellowBorder.jpeg";
+import { useSearchParams } from "next/navigation";
 
 interface Quiz {
   $id: string;
@@ -41,9 +42,9 @@ const page: React.FC = () => {
     const storeService = new StoreTournmentDataService();
     try {
       const response = await storeService.getSingleQuizById(dateId);
-      console.log(response);
-      setQuiz(response);
-
+      if (response) {
+        setQuiz(response);
+      }
       const tournment = await storeService.getTournamentById(
         response?.tournamentId
       );
@@ -80,20 +81,40 @@ const page: React.FC = () => {
 
   return (
     <div>
-     
       <div className="main-bg overflow-hidden">
         <div
           className="quizBannerTwo relative"
           style={{ backgroundImage: `url('${quiz?.quizImageURL}')` }}
         >
           {/* Overlay div */}
-          <div className="absolute top-0 right-0 bottom-0 left-0 bg-[#6D10CA] opacity-70 rounded-lg" style={{ zIndex: 1 }}></div>
+          <div
+            className="absolute top-0 right-0 bottom-0 left-0 opacity-70 rounded"
+            style={{
+              zIndex: 1,
+              backgroundColor: quiz?.colorSelect || "#6D10CA",
+            }}
+          ></div>
 
           {/* Content Container */}
-          <div className="statusBar flex justify-between items-center px-3" style={{ position: 'relative', zIndex: 2 }}>
+          <div
+            className="statusBar flex justify-between items-center px-3"
+            style={{ position: "relative", zIndex: 2 }}
+          >
             <div className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="25"
@@ -104,16 +125,16 @@ const page: React.FC = () => {
                     <path
                       d="M16.4211 7.18418C16.4211 9.45146 14.5831 11.2894 12.3158 11.2894C10.0485 11.2894 8.21054 9.45146 8.21054 7.18418C8.21054 4.91691 10.0485 3.07892 12.3158 3.07892C14.5831 3.07892 16.4211 4.91691 16.4211 7.18418Z"
                       stroke="white"
-                      stroke-width="2.05263"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.05263"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                     <path
                       d="M12.3158 14.3684C8.34807 14.3684 5.13159 17.5849 5.13159 21.5526H19.5C19.5 17.5849 16.2835 14.3684 12.3158 14.3684Z"
                       stroke="white"
-                      stroke-width="2.05263"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.05263"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </svg>
@@ -121,8 +142,20 @@ const page: React.FC = () => {
               <p className="stPlays mb-0">961 plays</p>
             </div>
             <div className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 10 10"
+                fill="none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -139,21 +172,18 @@ const page: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="mainGameHeadingQuiz" style={{ position: 'relative', zIndex: 200 }}>
+          <div
+            className="mainGameHeadingQuiz"
+            style={{ position: "relative", zIndex: 200 }}
+          >
             <h2 className="welcomePiza">Welcome to:</h2>
             <h1 className="gameHeading">{quiz?.quizName}</h1>
             <h2 className="gameHeadingTwo">A prize-winning quiz game</h2>
           </div>
         </div>
 
-
-        {/* <div className="h-7 bg-yellow-400" >
-
-        </div> */}
-       
-        {/* <Image src={YellowBorder} alt="tw"/> */}
         <div className="qmSecond bgPurple py-5">
-        {/* <div className="imgYelow">
+          {/* <div className="imgYelow">
         
         </div> */}
           <div className="flex justify-center items-center py-3">
@@ -188,36 +218,29 @@ const page: React.FC = () => {
 
           {tournament && (
             <>
-              {tournament.firstPrize &&
-                tournament.secondPrize &&
-                tournament.thirdPrize ? (
-                <Carousel
-                  first={tournament.firstPrize}
-                  second={tournament.secondPrize}
-                  third={tournament.thirdPrize}
-                />
-              ) : (
-                <div className="slide text-center relative">
-                  <Image
-                    src={crosBg}
-                    alt=""
-                    className="absolute inset-0 object-cover w-full h-full"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <h1 className="crHeading mb-0">1</h1>
-                      <p className="crPlaces">Places</p>
+              {tournament.type === "contest" ? (
+                <>
+                  {tournament.firstPrize ? (
+                    // Always show the first prize
+                    <div className="slide text-center relative">
+                      {/* ... */}
                     </div>
+                  ) : null}
 
-                    <div className="crLeftDiv ps-5">
-                      <h3 className="crfryer mb-4">{tournament?.firstPrize}</h3>
-                    </div>
-                  </div>
-                </div>
-              )}
+                  {tournament.secondPrize && tournament.thirdPrize ? (
+                    // Show Carousel with all three prizes
+                    <Carousel
+                      first={tournament.firstPrize}
+                      second={tournament.secondPrize}
+                      third={tournament.thirdPrize}
+                    />
+                  ) : null}
+                </>
+              ) : null}
+
+              {/* Do not show anything if the tournament type is 'free' */}
             </>
           )}
-
           <div className="pt-5">
             <p className="crThankyou mb-0"> Think you have it with Pizza? </p>
             <p className="crThankyou ">Play the game and win prizes! </p>
@@ -276,7 +299,9 @@ const page: React.FC = () => {
             {/* <img src={starImg} alt="" /> */}
             <Link
               key={quiz?.$id}
-              href={`/newlayout/${quiz?.$id}`}
+              href={`/newlayout/${quiz?.$id}?id=${
+                quiz?.$id
+              }&Quiz=${quiz?.quizName.replace(/\s+/g, "-")}`}
               className="text-decoration-none text-inherit"
             >
               <button className="startplaying">start playing</button>

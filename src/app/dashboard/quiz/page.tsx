@@ -25,6 +25,7 @@ interface FormData {
   quizImageURL: string;
   quizImageId: string;
   questions: Question[];
+  fontStyle:string;
   pointsPerSeconds: string;
 }
 interface Question {
@@ -109,6 +110,7 @@ const Page = () => {
     quizImageURL: '',
     quizImageId: '',
     questions: [],
+    fontStyle:'',
     pointsPerSeconds: '',
   });
   const router = useRouter();
@@ -431,8 +433,9 @@ const Page = () => {
         endDate: formData.endDate,
         basePoints: formData.basePoints,
         timePerQuestion: formData.timePerQuestion,
-        questions: questionsForTournament?.documents, // Ensure questions are properly set here
+        questions: questionsForTournament?.documents, 
         tournmentName: formData.selectedTournamentName,
+        fontStyle : formData.fontStyle,
 // @ts-ignore
 
         quizImageUrl: quizImageUrl?.href,
@@ -609,23 +612,35 @@ const Page = () => {
           </div>
 
           <div className="mb-4">
-            <label
-              htmlFor="inputField1"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Quiz Name
-            </label>
-            <div className="flex items-center">
-              <input
-                type="text"
-                id="quizName"
-                value={formData.quizName}
-                onChange={handleInputChange}
-                placeholder="Enter Quiz Name"
-                className="mt-1 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
-              />
-            </div>
-          </div>
+  <label
+    htmlFor="inputField1"
+    className="block text-sm font-medium text-gray-700"
+  >
+    Quiz Name
+  </label>
+  <div className="flex items-center">
+    <input
+      type="text"
+      id="quizName"
+      value={formData.quizName}
+      onChange={handleInputChange}
+      placeholder="Enter Quiz Name"
+      className="mt-1 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:border-blue-500"
+    />
+    <select
+      id="fontStyle"
+      value={formData.fontStyle}
+      onChange={handleInputChange}
+      className="ml-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+    >
+      <option value="">Select Font Style</option>
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+      {/* Add more font style options as needed */}
+    </select>
+  </div>
+</div>
           <div className="mb-3">
             <label className="block text-sm font-medium text-gray-700">
               Select color

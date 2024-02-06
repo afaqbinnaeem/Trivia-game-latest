@@ -5,7 +5,7 @@ import elipse from "@/assets/images/Ellipse 51.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 // @ts-ignore
-import CryptoJS from 'crypto-js';
+import CryptoJS from "crypto-js";
 
 const SignUpOne = () => {
   const router = useRouter();
@@ -15,15 +15,20 @@ const SignUpOne = () => {
 
   const handleEmail = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    if (!email) {
-      setError("Please provide your email address.");
+
+    // Email format validation using regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      setError("Please provide a valid email address.");
       return;
     }
+
     if (!checkboxChecked) {
       setError("Please check the privacy policy to continue.");
       return;
     }
-    router.push(`/nickname?email=${email || ""}`);
+
+    router.push(`/nickname?email=${email}`);
     setEmail("");
   };
   return (

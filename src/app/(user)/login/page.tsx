@@ -6,6 +6,7 @@ import elipse from '@/assets/images/Ellipse 51.png'
 import Image from 'next/image'
 import authService from '@/appwrite/authAppwriteService'
 import { useRouter } from 'next/navigation'
+import Cookies  from "js-cookie";
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -13,11 +14,11 @@ const Login = () => {
 
     const handleLogin = async(e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
         e.preventDefault()
-        console.log(email)
-        const password = email+"newUser123"
-       const response =  await authService.login(email, password)
-       console.log(response)
+       
+       const response =  await authService.login(email)
        if(response){
+          Cookies.set('userId', response.$id)
+          Cookies.set('providerUid', response.providerUid)
         router.push('/home')
        }
 

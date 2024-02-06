@@ -5,25 +5,50 @@ import av2 from "@/assets/images/av2.png";
 import av3 from "@/assets/images/av3.png";
 import av4 from "@/assets/images/av4.png";
 import av5 from "@/assets/images/av5.png";
-// import authService from '../services/appwriteConfig';
-// import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import Image from "next/image";
+import Cookies from "js-cookie";
+import { StoreTournmentDataService } from "@/appwrite/appwriteService";
 
 
 export default function Home() {
-  
+
   const [activeTab, setActiveTab] = useState("tab1");
   const [selectedAvatar, setSelectedAvatar] = useState(av5);
   const [showModel, setShowModel] = useState(false);
+  const [QuizPlayedCheckData, setQuizPlayedCheckData] = useState<any[]>([]);
   const [userDetails, setUserDetails] = useState({
     name: "",
     email: "",
   });
-  
+
+  useEffect(() => {
+    const userId = Cookies.get("userId")
+    console.log(userId, "userid");
+
+    if (userId) {
+      const checkPlayedQuizData = async () => {
+        try {
+          const storeService = new StoreTournmentDataService();
+          const response = await storeService.getAllUsersById(userId);
+          console.log(response, "response: ")
+          if (response !== undefined) {
+            setQuizPlayedCheckData(response);
+          } else {
+            console.error('Response is undefined.');
+          }
+        } catch (error) {
+          console.error('Error fetching users:', error);
+        }
+
+      }
+      checkPlayedQuizData()
+    }
+
+  }, [])
 
   const handleAvatarSelection = (avatarSrc: string) => {
-// @ts-ignore
+    // @ts-ignore
 
     setSelectedAvatar(avatarSrc);
   };
@@ -148,7 +173,7 @@ export default function Home() {
                     <button
                       type="submit"
                       className="loginButton"
-// @ts-ignore
+                      // @ts-ignore
 
                       onClick={(e) => handleSignup(e)}
                     >
@@ -200,7 +225,7 @@ export default function Home() {
                                       src={avatar}
                                       alt=""
                                       onClick={() => {
-// @ts-ignore
+                                        // @ts-ignore
 
                                         handleAvatarSelection(avatar);
                                         setShowModel(false);
@@ -226,45 +251,21 @@ export default function Home() {
               <table className="min-w-full table-auto mt-5">
                 <thead>
                   <tr>
-                    <th className="px-2 text-start py-2 border-b-2  border-gray-200 bg-transparent" style={{color: '#828282'}}>Quiz name</th>
-                    <th className="px-2 text-start  py-2 border-b-2  border-gray-200 bg-transparent" style={{color: '#828282'}}>Pos</th>
-                    <th className="px-2 text-start  py-2 border-b-2  border-gray-200 bg-transparent" style={{color: '#828282'}}>Score</th>
-                    
+                    <th className="px-2 text-start py-2 border-b-2  border-gray-200 bg-transparent" style={{ color: '#828282' }}>Quiz name</th>
+                    <th className="px-2 text-start  py-2 border-b-2  border-gray-200 bg-transparent" style={{ color: '#828282' }}>Pos</th>
+                    <th className="px-2 text-start  py-2 border-b-2  border-gray-200 bg-transparent" style={{ color: '#828282' }}>Score</th>
+
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td className="px-2 border-b-2  py-4 border-gray-200 hh-td">The pizza king</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">134</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">18943</td>
-                  </tr>
-                  <tr>
-                    <td className="px-2 border-b-2  py-4 border-gray-200 hh-td">The pizza king</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">134</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">18943</td>
-                  </tr>
-                  <tr>
-                    <td className="px-2 border-b-2  py-4 border-gray-200 hh-td">The pizza king</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">134</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">18943</td>
-                  </tr>
-                  <tr>
-                    <td className="px-2 border-b-2  py-4 border-gray-200 hh-td">The pizza king</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">134</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">18943</td>
-                  </tr>
-                  <tr>
-                    <td className="px-2 border-b-2  py-4 border-gray-200 hh-td">The pizza king</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">134</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">18943</td>
-                  </tr>
-                  <tr>
-                    <td className="px-2 border-b-2  py-4 border-gray-200 hh-td">The pizza king</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">134</td>
-                    <td className="px-2  py-4 border-b-2  border-gray-200 hh-td">18943</td>
-                  </tr>
-                
-                 
+                  {QuizPlayedCheckData?.map((quizData) => (
+                    <tr key={quizData.$id}>
+                      <td className="px-2 border-b-2 py-4 border-gray-200 hh-td">{quizData.quizName}</td>
+                      <td className="px-2 py-4 border-b-2 border-gray-200 hh-td">{quizData.score}</td>
+                      <td className="px-2 py-4 border-b-2 border-gray-200 hh-td">{quizData.score}</td>
+                    </tr>
+                  ))}
+
                 </tbody>
               </table>
 
